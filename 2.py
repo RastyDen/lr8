@@ -17,14 +17,19 @@ def circle(r):
 
 
 def cylinder(h, r, a):
-    if a == '1':
+    if a == '0':
         return 2 * math.pi * r * h
-    elif a == '2':
+    elif a == '1':
         return (circle(r) * 2) + (2 * math.pi * r * h)
 
 
 if __name__ == '__main__':
-    a = input('1-Площадь боковой поверхности; 2-Полная площадь цилиндра: ')
+    a = input('Что вы хотите получить?\n'
+              '[0] Площадь боковой поверхности.\n'
+              '[1] Полную площадь цилиндра.\n'
+              '>>> ')
     h = float(input('Введите высоту цилиндра: '))
     r = float(input('Введите радиус цилиндра: '))
+
+    # Вывод результатов
     print(cylinder(h, r, a))
